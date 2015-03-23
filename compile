@@ -1,0 +1,2 @@
+g++ -std=c++0x -o sequencer graph.cpp
+g++ -std=c++0x -o n50 n50.cpp

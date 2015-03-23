@@ -1,0 +1,38 @@
+Name: Ryan Vasios
+
+Sequence Assembler:
+
+This project simulates the process of genome sequence assemble in several steps.
+It begins by reading in a file of sequence reads and translating them into a
+'De Bruijn' graph.  This graph is then analyzed to detect errors in our
+initial sequence reads.  The reads are corrected, and output in file good_reads.
+These corrected reads are then reassembled into a graph which then 'walks' 
+through its unambiguous paths to construct and output all unambiguous
+contigs of length > 100.  The lengths of all contigs are also created in two files
+for the purposes of analysis.  
+
+
+
+How to compile:
+
+simply type 'sh compile' and let the scripts do their work.
+
+It will produce two executables
+
+./sequencer -  does the actual work of the assignment
+
+When executing it, use the following command arguments
+
+./sequencer seq_reads good_reads output_contigs contig_lengths all
+
+seq_reads = the input sequence reads
+good_reads = those reads free of error detection
+output_contigs =  assembled contigs of length > 100bp
+contig_lengths =  lengths of all contigs in output_contigs
+all= AN ADDITIONAL AND UNIQUE COMMAND LINE ARG.  Simply collects all contigs of all lengths
+     for the purposes of comparison to output_contigs and contig_lengths
+     
+     
+There is a second executable file, n50, that takes in a list of contig_lengths to determine
+the n50 value.  It is not as heavily annotated but works on the method of computation described
+in part 1 question 1.  
